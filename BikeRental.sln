@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeRental", "BikeRental\BikeRental.csproj", "{700DAE36-0CD1-4132-8C52-BFC3F0888BEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeRental", "BikeRental\BikeRental.csproj", "{700DAE36-0CD1-4132-8C52-BFC3F0888BEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentalTests", "..\RentalConsole\RentalTests\RentalTests.csproj", "{CFCADF11-C937-4889-B165-6B58A79F53CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{700DAE36-0CD1-4132-8C52-BFC3F0888BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{700DAE36-0CD1-4132-8C52-BFC3F0888BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{700DAE36-0CD1-4132-8C52-BFC3F0888BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFCADF11-C937-4889-B165-6B58A79F53CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFCADF11-C937-4889-B165-6B58A79F53CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFCADF11-C937-4889-B165-6B58A79F53CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFCADF11-C937-4889-B165-6B58A79F53CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
