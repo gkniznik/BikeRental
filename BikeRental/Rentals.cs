@@ -10,7 +10,7 @@ namespace BikeRental
          */
     public class Rentals
     {
-        List<BikeRental> Items { get; set; }
+        public List<BikeRental> Items { get; set; }
 
         public Rentals()
         {
