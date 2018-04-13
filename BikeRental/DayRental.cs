@@ -11,7 +11,7 @@ namespace BikeRental
     {
         protected override decimal Price()
         {
-            return 20;
+            return 20;  // Deberia almacenarse en base de datos
         }
 
         protected override decimal TotalTime()
