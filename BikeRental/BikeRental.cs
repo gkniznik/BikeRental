@@ -9,12 +9,15 @@ namespace BikeRental
     {
         public Customer Customer { get; set; }
         public List<Bike> Bikes { get; set; }
+        public DateTime Retrieval { get; set; }
+        public DateTime Yield { get; set; }
 
         protected abstract decimal Price();
+        protected abstract double TotalTime();
 
         public decimal Amount()
         {
-            return Price() * Bikes.Count - Promotion.Percentage(Bikes.Count);
+            return Price() * (decimal)TotalTime() * Bikes.Count * Promotion.Multiplier(Bikes.Count);
         }
     }
 
@@ -32,9 +35,9 @@ namespace BikeRental
     {
         static decimal discount = 30;
 
-        public static decimal Percentage(int bikes)
+        public static decimal Multiplier(int bikes)
         {
-            return !IsValid(bikes) ? 0 : discount;
+            return !IsValid(bikes) ? 1 : (100 - discount) / 100;
         }
 
         static bool IsValid(int bikes)
@@ -49,6 +52,11 @@ namespace BikeRental
         {
             return 5;
         }
+
+        protected override double TotalTime()
+        {
+            return TimeSpan.FromTicks(Yield.Ticks - Retrieval.Ticks).TotalHours;
+        }
     }
 
     public class DayRental : BikeRental
@@ -57,6 +65,11 @@ namespace BikeRental
         {
             return 20;
         }
+
+        protected override double TotalTime()
+        {
+            return TimeSpan.FromTicks(Yield.Ticks - Retrieval.Ticks).TotalDays;
+        }
     }
 
     public class WeekRental : BikeRental
@@ -64,6 +77,11 @@ namespace BikeRental
         protected override decimal Price()
         {
             return 60;
+        }
+
+        protected override double TotalTime()
+        {
+            return TimeSpan.FromTicks(Yield.Ticks - Retrieval.Ticks).TotalDays / 7;
         }
     }
 
