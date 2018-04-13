@@ -4,6 +4,9 @@ using System.Text;
 
 namespace BikeRental
 {
+    /*
+        Esta clase representa el alquiler por día, con sus propias funciones de cálculo
+         */
     public class DayRental : BikeRental
     {
         protected override decimal Price()

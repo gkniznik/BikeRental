@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace BikeRental
 {
+    /*
+        Esta clase representa la factura o ticket para el pago
+         */
     public class Rentals
     {
         List<BikeRental> Items { get; set; }
